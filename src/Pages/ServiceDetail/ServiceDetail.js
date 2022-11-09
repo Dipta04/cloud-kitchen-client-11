@@ -1,9 +1,11 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const ServiceDetail = () => {
-    const { name, image, price, description, review } = useLoaderData()
+    const {_id, name, image, price, description, review } = useLoaderData()
+    const {user} = useContext(AuthContext);
     return (
         <div className='mb-3'>
             <div className="card card-compact w-100 bg-base-100 shadow-xl">
@@ -17,13 +19,13 @@ const ServiceDetail = () => {
                         }
                     </p>
                     <div className="card-actions justify-end">
-                        {/* <Link to={`/checkout/${_id}`}> */}
-                        <button className="btn btn-primary">Checkout</button>
-                        {/* </Link> */}
+                        <Link to='/'>
+                        <button className="btn btn-primary">Go to Home</button>
+                        </Link>
                     </div>
                 </div>
             </div>
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-full mt-4">
 
                 <table className="table w-full">
                   
@@ -71,10 +73,16 @@ const ServiceDetail = () => {
 
                 </table>
             </div>
-            <h1>You can add Your review.</h1>
             <div>
-
-            </div>
+               {
+                user?.uid
+                ?
+               <button className='btn mt-5'><Link to={`/reviewform/${_id}`}>Add my review</Link></button>
+                 :
+               <p>You have to <button className="btn btn-link"><Link to='/login'>Login</Link></button> to add your review</p>
+            
+               }
+             </div>
 
         </div>
     );

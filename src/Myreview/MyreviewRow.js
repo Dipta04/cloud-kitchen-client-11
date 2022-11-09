@@ -11,8 +11,7 @@ const MyreviewRow = ({review,handleDelete,handleUpdate}) => {
                 .then(data => setReviewService(data))
         }, [review])
 
-    return (
-
+     return (
         <tr>
             <th>
                 <label>
@@ -41,7 +40,6 @@ const MyreviewRow = ({review,handleDelete,handleUpdate}) => {
                 <button onClick={()=>handleUpdate(_id)} className="btn btn-primary">Edit</button>
             </th>
         </tr>
-
     );
 };
 

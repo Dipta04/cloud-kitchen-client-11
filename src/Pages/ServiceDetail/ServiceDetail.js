@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from "react-icons/fa";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Usetitle from '../../Hooks/Usetitle';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceDetail = () => {
     Usetitle('Service-detail')
@@ -11,7 +12,13 @@ const ServiceDetail = () => {
     return (
         <div className='mb-3'>
             <div className="card card-compact w-100 bg-base-100 shadow-xl">
-                <figure><img src={image} alt="Shoes" className='h-96' /></figure>
+                <figure>
+                    <PhotoProvider>
+                    <PhotoView src={image}>
+                    <img src={image} alt="Shoes" className='h-96' />
+                    </PhotoView>
+                    </PhotoProvider>
+                </figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p className='text-2xl text-orange-600 font-semibold'>Price: ${price}</p>

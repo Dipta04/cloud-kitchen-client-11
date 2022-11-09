@@ -71,7 +71,11 @@ const Myreview = () => {
                 }
             })
     }
-
+     
+    if(reviews.length===0)
+    {
+        return <h1 className='font bold text-5xl mt-80 mb-40 ml-96 italic'>No reviews were added</h1>
+    }
 
     return (
         <div>
@@ -92,14 +96,15 @@ const Myreview = () => {
                         </tr>
                     </thead>
                     <tbody>
-
                        {
+        
                          reviews.map(review=><MyreviewRow
                          key={review._id}
                          review={review}
                          handleDelete={handleDelete}
                          handleUpdate={handleUpdate}
                          ></MyreviewRow>)
+                         
                        }
 
                     </tbody>

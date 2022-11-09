@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Addservice from '../../Addservice/Addservice';
 import Allservicecard from './Allservicecard';
 
 
@@ -11,7 +12,8 @@ const Allservice = () => {
         .then(data=>setallServices(data))
     }, [])
 
-    return (
+    return (  
+        <div>
         <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-3 mb-3'>
                {
                    allservices.map(service => <Allservicecard
@@ -20,6 +22,11 @@ const Allservice = () => {
                    ></Allservicecard>)
                 }
         </div>
+        <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-3 mb-3'>
+            <Addservice></Addservice>
+        </div>
+        </div>
+        
     );
 };
 

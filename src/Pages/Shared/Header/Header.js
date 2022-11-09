@@ -20,7 +20,7 @@ const Header = () => {
                 ?
                 <>
                     <li className='font-semibold'><Link to='/reviews'>My reviews</Link></li>
-                    <li className='font-semibold'><Link to='/orders'>Add service</Link></li>
+                    <li className='font-semibold'><Link to='/myservice'>Add service</Link></li>
                     <li className='font-semibold'>
                         <button onClick={handleLogOut} className='btn-ghost'>Logout</button>
                     </li>

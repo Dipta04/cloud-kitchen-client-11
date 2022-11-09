@@ -2,6 +2,7 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
+
 const Allservicecard = ({ service }) => {
     const {_id, name, image, price, description } = service;
     return (
@@ -33,6 +34,8 @@ const Allservicecard = ({ service }) => {
                 </div>
             </div>
         </div>
+
+        
     );
 };
 

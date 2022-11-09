@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if (loading) {
-        return <button className="btn"><svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg></button>
+        return <h1 className='text-5xl'>Loading...</h1>
     }
     if (user) {
         return children;

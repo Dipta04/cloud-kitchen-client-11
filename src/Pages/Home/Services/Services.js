@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
-   
+     
     const [services, setServices] = useState([]);
     
     useEffect(() => {

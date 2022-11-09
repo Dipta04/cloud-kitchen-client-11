@@ -23,7 +23,7 @@ const MyreviewRow = ({review,handleDelete,handleUpdate}) => {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle">
-                            
+                    
                         </div>
                     </div>
                     <div>
@@ -38,7 +38,7 @@ const MyreviewRow = ({review,handleDelete,handleUpdate}) => {
             <td>{FoodserviceName}</td>
             <td>{price}</td>
             <th>
-                <button className="btn btn-primary">Edit</button>
+                <button onClick={()=>handleUpdate(_id)} className="btn btn-primary">Edit</button>
             </th>
         </tr>
 

@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Usetitle from '../Hooks/Usetitle';
 
 const Reviewform = () => {
+    Usetitle('Reviewform');
     const {_id,name,price}= useLoaderData();
     const {user} = useContext(AuthContext);
-
+   
     const handleReview = event =>{
         event.preventDefault();
         const form = event.target;
@@ -35,7 +38,7 @@ const Reviewform = () => {
             console.log(data)
             if(data.acknowledged)
             {
-                alert('Review placed successfully');
+                toast.success('Review placed successfully');
                 form.reset();
             }
         })

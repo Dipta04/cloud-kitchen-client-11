@@ -8,7 +8,7 @@ const Addservice = () => {
     const [newServices,setnewServices] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/newservices/?email=${user?.email}`, {
+        fetch(`https://cloud-kitchen-server-two.vercel.app/newservices/?email=${user?.email}`, {
             headers: {
                  authorization: `Bearer ${localStorage.getItem('kitchen-token')}`
               }

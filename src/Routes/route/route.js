@@ -9,6 +9,7 @@ import Home from "../../Pages/Home/Home/Home";
 import ServiceDetail from "../../Pages/ServiceDetail/ServiceDetail";
 import Reviewform from "../../Reviewform/Reviewform";
 import Signup from "../../Signup/Signup";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path:'/services/:id',
                 element:<ServiceDetail></ServiceDetail>,
-                loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params}) => fetch(`https://cloud-kitchen-server-two.vercel.app/services/${params.id}`)
             },
             {
                 path:'/login',
@@ -42,16 +43,16 @@ const router = createBrowserRouter([
             },
             {
                 path:'/reviewform/:id',
-                element:<Reviewform></Reviewform>,
-                loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                element:<PrivateRoute><Reviewform></Reviewform></PrivateRoute>,
+                loader:({params}) => fetch(`https://cloud-kitchen-server-two.vercel.app/services/${params.id}`)
             },
             {
                 path:'/reviews',
-                element:<Myreview></Myreview>
+                element:<PrivateRoute><Myreview></Myreview></PrivateRoute>
             },
             {
                 path:'/myservice',
-                element:<AddserviceForm></AddserviceForm>
+                element:<PrivateRoute><AddserviceForm></AddserviceForm></PrivateRoute>
             }
         ]
     }

@@ -10,7 +10,7 @@ const Myreview = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`,{
+        fetch(`https://cloud-kitchen-server-two.vercel.app/reviews?email=${user?.email}`,{
             headers: {
                 authorization: `Bearer ${localStorage.getItem('kitchen-token')}`
             }
@@ -30,7 +30,7 @@ const Myreview = () => {
 
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://cloud-kitchen-server-two.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('kitchen-token')}`
@@ -50,7 +50,7 @@ const Myreview = () => {
 
     const handleUpdate = id => {
 
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://cloud-kitchen-server-two.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

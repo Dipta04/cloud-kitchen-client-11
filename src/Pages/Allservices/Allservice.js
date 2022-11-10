@@ -7,7 +7,7 @@ const Allservice = () => {
     const [allservices, setallServices] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://cloud-kitchen-server-two.vercel.app/services')
         .then(res=>res.json())
         .then(data=>setallServices(data))
     }, [])

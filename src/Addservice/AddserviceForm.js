@@ -1,8 +1,10 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import Usetitle from '../Hooks/Usetitle';
 
 
 const AddserviceForm = () => {
+    Usetitle("Addservice");
     const handlePlaceService = event => {
         event.preventDefault();
         const form = event.target;
@@ -18,7 +20,7 @@ const AddserviceForm = () => {
             description
         }
 
-        fetch('http://localhost:5000/newservices', {
+        fetch('https://cloud-kitchen-server-two.vercel.app/newservices', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -42,10 +44,10 @@ const AddserviceForm = () => {
     return (
         <div>
             <form onSubmit={handlePlaceService}>
-                <input type="url" name='img' placeholder="Type here" className="input input-bordered w-full mt-5 mb-5" required/>
-                <input type="text" name='name' placeholder="Type here" className="input input-bordered w-full mb-5" required/>
-                <input type="text" name='price' placeholder="Type here" className="input input-bordered w-full mb-5" required/>
-                <input type="text" name='description' placeholder="Type here" className="input input-bordered w-full mb-5" required/>
+                <input type="url" name='img' placeholder="Image url" className="input input-bordered w-full mt-5 mb-5" required/>
+                <input type="text" name='name' placeholder="Service Name" className="input input-bordered w-full mb-5" required/>
+                <input type="text" name='price' placeholder="Price" className="input input-bordered w-full mb-5" required/>
+                <input type="text" name='description' placeholder="Description" className="input input-bordered w-full mb-5" required/>
                 <input className='btn mb-5' type="submit" value="Place Your Service" />
             </form>
         </div>

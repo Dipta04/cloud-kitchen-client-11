@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const logOut = () =>{
-        localStorage.removeItem('kitchen-token');
+        // localStorage.removeItem('kitchen-token');
         return signOut(auth);
     }
 

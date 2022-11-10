@@ -25,7 +25,7 @@ const Reviewform = () => {
             message
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://cloud-kitchen-server-two.vercel.app/reviews', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

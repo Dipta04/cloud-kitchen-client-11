@@ -26,7 +26,7 @@ const Login = () => {
                 }
 
                 console.log(currentUser);
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://cloud-kitchen-server-two.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const Login = () => {
             }
 
             console.log(currentUser);
-            fetch('http://localhost:5000/jwt', {
+            fetch('https://cloud-kitchen-server-two.vercel.app/jwt', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
